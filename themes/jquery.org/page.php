@@ -8,11 +8,15 @@
  * different template.
  */
 
-get_header(); ?>
+get_header();
+
+$hasLeftNav = count( get_post_meta( $post->ID, "left-nav" ) );
+
+?>
 
 <?php the_post(); ?>
 
-<div class="content-full twelve columns<?php if ( count( get_post_meta( $post->ID, "full-width" ) ) ) : ?> full-width<?php endif; ?>">
+<div class="<?php if ( $hasLeftNav ) { ?>content-right<?php }else{ ?>content-full<?php } ?> twelve columns<?php if ( count( get_post_meta( $post->ID, "full-width" ) ) ) : ?> full-width<?php endif; ?>">
 	<div id="content">
 		<?php if ( count( get_post_meta( $post->ID, "banner-image" ) ) ) { ?>
 
@@ -39,6 +43,7 @@ get_header(); ?>
 		<?php get_template_part( 'content', 'page' ); ?>
 
 	</div>
+	<?php if ( $hasLeftNav ) { get_sidebar(); } ?>
 </div>
 
 <?php get_footer(); ?>
