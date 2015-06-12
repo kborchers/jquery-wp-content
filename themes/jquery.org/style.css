@@ -480,6 +480,23 @@ a.icon-search::before {
 	border-bottom: 1px solid #dbdbdb;
 }
 
+.page-slug-team #content .department-head {
+	border-bottom: 1px solid #dbdbdb;
+	margin: 0 0 0.5em;
+}
+
+.page-slug-team #content .department-lead {
+	float: left;
+	margin-right: 10px;
+	min-width: 200px;
+}
+
+.page-slug-team #content .department-lead h3 {
+	border-bottom: none;
+	margin: 0 0 0.1em;
+	min-height: 0;
+}
+
 .page-slug-team #content ul.team-list h3 {
 	border: none;
 	min-height: 5px;
@@ -661,6 +678,12 @@ nav#main ul {
 
 	.flexslider {
 		margin-bottom: 20px;
+	}
+
+	.page-slug-team #content .department-lead {
+		float: none;
+		margin-right: auto;
+		min-width: 0;
 	}
 }
 
